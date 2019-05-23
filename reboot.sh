@@ -2,7 +2,7 @@
 
 sleep 5 
 [ -f /home/pi/AirBox2/sense.py ] && {
-    /usr/bin/sudo git -C /home/pi/AirBox2 fetch origon
+    /usr/bin/sudo git -C /home/pi/AirBox2 fetch origin
     /usr/bin/sudo git -C /home/pi/AirBox2 reset --hard origin/master
     /usr/bin/python /home/pi/AirBox2/sense.py > /home/pi/AirBox2/ans.txt
     echo ok1 > /home/pi/AirBox2/config.txt
