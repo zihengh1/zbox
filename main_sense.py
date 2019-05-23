@@ -1,3 +1,3 @@
 for i in range(10):
-    print("Yo man, start to code: ", i)
+    print("Hi man, start to code: ", i)
 
