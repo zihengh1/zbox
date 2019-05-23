@@ -9,3 +9,5 @@
 - Time: DS3231
 - Display: epaper 2.7inch
 - GPS: NEO6M
+
+### "Not only work hard, but work smart." -- LJ
