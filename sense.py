@@ -200,10 +200,9 @@ if __name__ == '__main__':
         logger.error("TCS open failed error msg: %s", e)
     ###################################        
 
-    print(sense_data)
+    logger.info("==================================")
 
     ########## Store Data #############
-
     info_key = sense_data.keys()
     store_data = [sense_data]
     
@@ -220,7 +219,22 @@ if __name__ == '__main__':
             logger.info("Storing data successfully") 
         except Exception as e:
             logger.error("Storing data failed, error msg: %s", e) 
+    ###################################
 
+    logger.info("==================================")
+
+    ########## Upload Part ############
+    msg = ""
+    for label, value in sense_data.items():
+        msg += "|" + label + "=" + str(value)
+    
+    restful_str = "wget -O /tmp/last_upload.log \"" + Conf.Restful_URL + "device_id=" + Conf.DEVICE_ID + "&msg=" + msg + "\""
+
+    # try:
+    #     os.system(restful_str)
+    #     logger.info("Upload data successfully")
+    # except Exception as e:
+    # logger.info("Upload data failed, error msg: %s", e)
     ###################################
 
     logger.info("==================================")
@@ -238,7 +252,6 @@ if __name__ == '__main__':
         logger.info("Display successfully")
     except Exception as e:
         logger.error("Display failed")
-
     ################################### 
     
     logger.info("==================================")

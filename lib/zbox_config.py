@@ -33,6 +33,9 @@ plot_path = "/home/pi/zbox/PLOT/"
 ## Store data path
 data_path = "/home/pi/Data/"
 
+## Upload url 
+Restful_URL = "https://pm25.lass-net.org/Uploads/PiM25.php?"
+
 ## Device information
 device_info = { "s_d0"      : -1, \
                 "s_d1"      : -1, \
@@ -47,10 +50,10 @@ device_info = { "s_d0"      : -1, \
                 "s_g8"      : -1, \
                 "date"      : "", \
                 "time"      : "", \
-                "gps_num"   : -1, \
-                "gps_lat"   : -1, \
-                "gps_lon"   : -1, \
-                "app"       : "zbox", \
+                "gps_num"   : 0, \
+                "gps_lat"   : 25.1933, \
+                "gps_lon"   : 121.7870, \
+                "app"       : "PiM25", \
                 "device"    : "Raspberry_Pi", \
                 "device_id" : "", \
                 "tick"      : -1, \

@@ -21,11 +21,11 @@ def draw():
     data = data.resample("5min").mean()
     data = data.interpolate()
 
-    ax = data.plot(figsize=(12, 5), fontsize=24)
+    ax = data.plot(figsize = (12, 5), fontsize = 26)
     ax.get_legend().remove()
 
     plt.gcf().autofmt_xdate()
-    plt.xticks(rotation=0)
-    plt.ylabel('PM2.5', fontsize=26)
+    plt.xticks(rotation = 0)
+    plt.ylabel('PM2.5', fontsize = 28)
 
     plt.savefig(plot_path + "pm25_line.png", bbox_inches = "tight")

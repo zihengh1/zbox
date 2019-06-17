@@ -82,7 +82,7 @@ def display(data):
         draw.line((3, 45, 260, 45), fill = 0)
       
         bmp = Image.open(plot_path + 'pm25_line.bmp')
-        Himage1.paste(bmp, (0,48))
+        Himage1.paste(bmp, (0,47))
        
         ## Display ##
         epd.display(epd.getbuffer(Himage1))
