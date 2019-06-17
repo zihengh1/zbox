@@ -8,24 +8,32 @@ bus = smbus.SMBus(1)
 # Select Enable register, 0x80(128)
 #       0x03(03)    Power ON, RGBC enable, RGBC Interrupt Mask not asserted
 #                   Wait disable, Sleep After Interrupt not asserted
+
 bus.write_byte_data(0x29, 0x80, 0x03)
+
 # TCS34725 address, 0x29(41)
 # Select RGBC Timing register, 0x81(129)
 #       0x00(00)    ATIME : 700ms
+
 bus.write_byte_data(0x29, 0x81, 0x00)
+
 # TCS34725 address, 0x29(41)
 # Select Wait Time register, 0x83(131)
 #       0xFF(255)   WTIME : 2.4ms
+
 bus.write_byte_data(0x29, 0x83, 0xFF)
+
 # TCS34725 address 0x29(41)
 # Select Control register, 0x8F(143)
 #       0x00(00)    AGAIN is 1x
+
 bus.write_byte_data(0x29, 0x8F, 0x00)
 
 # TCS34725 address 0x29(41)
 # Read data back from 0x94(148), 8 bytes
 # cData LSB, cData MSB, Red LSB, Red MSB, Green LSB, Green MSB
 # Blue LSB, Blue MSB 
+
 data = bus.read_i2c_block_data(0x29, 0x94, 8)
 
 # Convert the data
@@ -43,3 +51,6 @@ print "Green Color luminance : %d lux" %green
 print "Blue Color luminance : %d lux" %blue
 print "IR luminance : %d lux" %cData
 print "Ambient Light luminance : %.2f lux" %luminance
+
+
+

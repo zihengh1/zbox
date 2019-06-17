@@ -167,11 +167,17 @@ if __name__ == '__main__':
     ########## Light Part #############
     try:
         tcs_handle = pi.i2c_open(1, 0x29)
-        pi.i2c_write_device(tcs_handle, b'\x29\x80\x03')
-        pi.i2c_write_device(tcs_handle, b'\x29\x81\x00')
-        pi.i2c_write_device(tcs_handle, b'\x29\x83\xFF')
-        pi.i2c_write_device(tcs_handle, b'\x29\x8F\x00')
-        (status_c, color_raw_data) = pi.i2c_read_device(tcs_handle, 8)
+        # pi.i2c_write_device(tcs_handle, b'\x29\x80\x03')
+        # pi.i2c_write_device(tcs_handle, b'\x29\x81\x00')
+        # pi.i2c_write_device(tcs_handle, b'\x29\x83\xFF')
+        # pi.i2c_write_device(tcs_handle, b'\x29\x8F\x00')
+        pi.i2c_write_byte_data(tcs_handle, 128, 0x03)
+        # pi.i2c_write_byte_data(tcs_handle, 129, 0x00)
+        # pi.i2c_write_byte_data(tcs_handle, 131, 0xFF)
+        # pi.i2c_write_byte_data(tcs_handle, 143, 0x00)
+
+        # (status_c, color_raw_data) = pi.i2c_read_device(tcs_handle, 8)
+        (status_c, color_raw_data) = pi.i2c_read_i2c_block_data(tcs_handle, 148, 8)
         if status_c > 0:
             logger.info("TCS read data successfully")
             c = color_raw_data[1] * 256 + color_raw_data[0]
