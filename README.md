@@ -1,4 +1,4 @@
-# AirBox2
+# zbox
 ### Next generation airbox
 - Embedded System: Pi3 B+
 - PM2.5 sensor: G5
