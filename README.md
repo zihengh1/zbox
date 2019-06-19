@@ -10,4 +10,15 @@
 - Display: epaper 2.7inch
 - GPS: NEO6M
 
+### Library
+`
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python-pip
+sudo pip install spidev
+sudo apt-get install i2c-tools
+sudo apt-get install python-serial
+sudo apt-get install python-pandas
+`
+
 ### "Not only work hard, but work smart." -- L.J.
