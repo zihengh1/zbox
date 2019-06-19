@@ -12,13 +12,13 @@
 
 ### Library
 `
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install python-pip
-sudo pip install spidev
-sudo apt-get install i2c-tools
-sudo apt-get install python-serial
-sudo apt-get install python-pandas
+sudo apt-get update<br>
+sudo apt-get upgrade<br>
+sudo apt-get install python-pip<br>
+sudo pip install spidev<br>
+sudo apt-get install i2c-tools<br>
+sudo apt-get install python-serial<br>
+sudo apt-get install python-pandas<br>
 `
 
 ### "Not only work hard, but work smart." -- L.J.
